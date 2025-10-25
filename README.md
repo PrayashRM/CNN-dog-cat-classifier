@@ -1,44 +1,60 @@
-🐾 Animal Faces Classifier – CNN from Scratch (PyTorch)
+<h1 align="center">🐾 Animal Faces Classifier – CNN from Scratch (PyTorch)</h1>
 
-A deep learning model built from scratch using vanilla CNN architecture in PyTorch to classify animal images (dogs, cats, and wild animals) from the Kaggle Animal Faces Dataset
-.
-This project demonstrates core computer vision and model-building skills without relying on any pre-built models or transfer learning techniques.
+<p align="center">
+  <b>Deep Learning | CNN | Image Classification</b><br>
+  Built <b>from scratch</b> using <b>PyTorch</b> — classifies Dogs, Cats, and Wild Animals with <b>96.775% accuracy</b> 🧠🔥
+</p>
 
-🚀 Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9-blue?logo=python">
+  <img src="https://img.shields.io/badge/PyTorch-orange?logo=pytorch">
+  <img src="https://img.shields.io/badge/Status-Completed-success">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey">
+</p>
 
-The model classifies images of animals into three categories — Dogs, Cats, and Wild Animals — using a custom-built convolutional neural network (CNN).
-It achieves an impressive accuracy of 96.775%, showcasing effective training, data preprocessing, and model design.
+---
 
-🧠 Key Features
+<h2>🚀 Overview</h2>
 
-Fully implemented from scratch using PyTorch
+<p>
+A deep learning model built from scratch using <b>vanilla CNN architecture</b> in <b>PyTorch</b> to classify animal images — Dogs, Cats, and Wild Animals — from the <a href="https://www.kaggle.com/datasets/andrewmvd/animal-faces/data">Kaggle Animal Faces Dataset</a>.<br><br>
+This project demonstrates core <b>computer vision</b> and <b>model-building</b> skills without relying on any pre-built models or transfer learning techniques.
+</p>
 
-Custom CNN architecture (no pretrained models)
+---
 
-Data augmentation and regularization for robustness
+<h2>🧠 Key Features</h2>
 
-Achieved 96.775% test accuracy
+<ul>
+  <li>⚙️ Fully implemented <b>from scratch</b> using PyTorch</li>
+  <li>🧩 Custom CNN architecture (no pretrained models)</li>
+  <li>🎛️ Data augmentation and regularization for robustness</li>
+  <li>📈 Achieved <b>96.775% test accuracy</b></li>
+  <li>🧱 Modular design for easy experimentation</li>
+</ul>
 
-Modular code design for easy experimentation
+---
 
-🧩 Dataset
+<h2>🧩 Dataset</h2>
 
-Dataset Used: Animal Faces Dataset – Kaggle
+<ul>
+  <li><b>Dataset Used:</b> <a href="https://www.kaggle.com/datasets/andrewmvd/animal-faces/data">Animal Faces Dataset (Kaggle)</a></li>
+  <li><b>Classes:</b> Dog 🐶 | Cat 🐱 | Wild Animals 🦁</li>
+  <li><b>Data Split:</b></li>
+  <ul>
+    <li>Training Set – 70%</li>
+    <li>Validation Set – 15%</li>
+    <li>Test Set – 15%</li>
+  </ul>
+</ul>
 
-Classes: Dog, Cat, Wild Animals
+---
 
-Split:
+<h2>🖼️ Data Preprocessing & Augmentation</h2>
 
-Training Set: 70%
+<p>Each image is resized and augmented to improve generalization.</p>
 
-Validation Set: 15%
-
-Test Set: 15%
-
-🖼️ Data Preprocessing & Augmentation
-
-Each image is resized and augmented to improve generalization.
-
+```python
 transforms.Compose([
     transforms.Resize((128, 128)),
     transforms.RandomHorizontalFlip(),
@@ -46,11 +62,9 @@ transforms.Compose([
     transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
     transforms.ToTensor()
 ])
-
-🏗️ Model Architecture
-
-The CNN model is implemented from scratch using PyTorch’s nn.Module.
-
+<h2>🏗️ Model Architecture</h2> <details> <summary>🔍 <b>View CNN Model Code</b></summary>
+python
+Copy code
 class MyCNNmodelNet(nn.Module):
     def __init__(self):
         super().__init__()
@@ -74,24 +88,15 @@ class MyCNNmodelNet(nn.Module):
         x = self.relu(self.linear(x))
         x = self.output(x)
         return x
-
-⚙️ Training Details
-
-Loss Function: CrossEntropyLoss()
-
-Optimizer: Adam
-
-Learning Device: GPU (CUDA if available)
-
-Framework: PyTorch
-
+</details>
+<h2>⚙️ Training Details</h2> <ul> <li>🎯 <b>Loss Function:</b> CrossEntropyLoss()</li> <li>⚡ <b>Optimizer:</b> Adam</li> <li>💻 <b>Device:</b> GPU (CUDA if available)</li> <li>🧩 <b>Framework:</b> PyTorch</li> </ul>
+python
+Copy code
 criterion = nn.CrossEntropyLoss()
 optimizer = Adam(model.parameters(), lr=0.001)
-
-📊 Model Evaluation
-
-Evaluation was performed on the test set to measure accuracy and average loss.
-
+<h2>📊 Model Evaluation</h2> <p>Evaluation performed on the test set to measure average loss and accuracy.</p>
+python
+Copy code
 model.eval()
 correct, total, total_epoch_loss = 0, 0, 0.0
 
@@ -109,70 +114,22 @@ with torch.no_grad():
 avg_loss = total_epoch_loss / len(test_loader)
 accuracy = (correct / total) * 100
 print(f'Avg Loss: {avg_loss:.4f} | Accuracy: {accuracy:.3f}%')
-
-
-📈 Final Accuracy: 96.775%
-
-🧰 Technologies Used
-
-Python 3.x
-
-PyTorch
-
-Torchvision
-
-Scikit-learn
-
-Matplotlib
-
-Pandas
-
-NumPy
-
-Pillow
-
-🧪 Environment Setup
-
-Clone the repository:
-
+<p align="center"><b>✅ Final Accuracy: 96.775%</b></p>
+<h2>🧰 Technologies Used</h2> <p align="center"> 🐍 Python 3.x • 🔥 PyTorch • 🖼️ Torchvision • 📊 Scikit-learn • 📈 Matplotlib • 🧮 NumPy • 🧱 Pandas • 🖼️ Pillow </p>
+<h2>🧪 Environment Setup</h2>
+bash
+Copy code
+# Clone the repository
 git clone https://github.com/yourusername/animal-faces-classifier.git
 cd animal-faces-classifier
 
-
-Install dependencies:
-
+# Install dependencies
 pip install torch torchvision scikit-learn matplotlib pandas pillow
 
-
-Mount or place dataset in the project directory (if using Google Colab, mount Google Drive).
-
-Run the training script:
-
+# (Optional) Mount Google Drive if using Colab
+# Run the training script
 python train.py
-
-🏁 Results
-Metric	Value
-Accuracy	96.775%
-Loss	Low and stable across epochs
-Model Type	Custom CNN
-Dataset	Animal Faces (Kaggle)
-🔮 Future Scope
-
-Experiment with Transfer Learning (e.g., ResNet, VGG16)
-
-Build Flask/Streamlit web interface for live classification
-
-Deploy model on cloud platforms (AWS, GCP, Hugging Face)
-
-Add more animal classes for broader generalization
-
-👨‍💻 Author
-
-Prayash Ranjan Mohanty
-B.Tech in Computer Science (AI & ML)
-Kalinga Institute of Industrial Technology, Bhubaneswar
-📧 prayashranjanmohanty11@gmail.com
-
-🪪 License
-
-This project is released under the MIT License — free for personal and academic use.
+<h2>🏁 Results</h2> <table align="center"> <tr><th>Metric</th><th>Value</th></tr> <tr><td>Accuracy</td><td>96.775%</td></tr> <tr><td>Loss</td><td>Low and stable across epochs</td></tr> <tr><td>Model Type</td><td>Custom CNN</td></tr> <tr><td>Dataset</td><td>Animal Faces (Kaggle)</td></tr> </table>
+<h2>🔮 Future Scope</h2> <ul> <li>🚀 Experiment with Transfer Learning (ResNet, VGG16)</li> <li>🌐 Build a Flask/Streamlit web interface for live classification</li> <li>☁️ Deploy the model on cloud platforms (AWS, GCP, Hugging Face)</li> <li>🐾 Add more animal classes for broader generalization</li> </ul>
+<h2>👨‍💻 Author</h2> <p align="center"> <b>Prayash Ranjan Mohanty</b><br> B.Tech in Computer Science (AI & ML)<br> Kalinga Institute of Industrial Technology, Bhubaneswar<br> 📧 <a href="mailto:prayashranjanmohanty11@gmail.com">prayashranjanmohanty11@gmail.com</a> </p> <p align="center"> <a href="https://github.com/prayashmohanty"> <img src="https://img.shields.io/badge/GitHub-PrayashRanjanMohanty-black?logo=github"/> </a> </p>
+<h2>🪪 License</h2> <p align="center"> This project is released under the <b>MIT License</b> — free for personal and academic use. 🧾 </p> ```
