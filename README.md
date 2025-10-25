@@ -54,7 +54,7 @@ This project demonstrates core <b>computer vision</b> and <b>model-building</b> 
 
 <p>Each image is resized and augmented to improve generalization.</p>
 
-```python
+python
 transforms.Compose([
     transforms.Resize((128, 128)),
     transforms.RandomHorizontalFlip(),
@@ -62,6 +62,7 @@ transforms.Compose([
     transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2),
     transforms.ToTensor()
 ])
+
 <h2>🏗️ Model Architecture</h2> <details> <summary>🔍 <b>View CNN Model Code</b></summary>
 python
 Copy code
@@ -132,4 +133,4 @@ python train.py
 <h2>🏁 Results</h2> <table align="center"> <tr><th>Metric</th><th>Value</th></tr> <tr><td>Accuracy</td><td>96.775%</td></tr> <tr><td>Loss</td><td>Low and stable across epochs</td></tr> <tr><td>Model Type</td><td>Custom CNN</td></tr> <tr><td>Dataset</td><td>Animal Faces (Kaggle)</td></tr> </table>
 <h2>🔮 Future Scope</h2> <ul> <li>🚀 Experiment with Transfer Learning (ResNet, VGG16)</li> <li>🌐 Build a Flask/Streamlit web interface for live classification</li> <li>☁️ Deploy the model on cloud platforms (AWS, GCP, Hugging Face)</li> <li>🐾 Add more animal classes for broader generalization</li> </ul>
 <h2>👨‍💻 Author</h2> <p align="center"> <b>Prayash Ranjan Mohanty</b><br> B.Tech in Computer Science (AI & ML)<br> Kalinga Institute of Industrial Technology, Bhubaneswar<br> 📧 <a href="mailto:prayashranjanmohanty11@gmail.com">prayashranjanmohanty11@gmail.com</a> </p> <p align="center"> <a href="https://github.com/prayashmohanty"> <img src="https://img.shields.io/badge/GitHub-PrayashRanjanMohanty-black?logo=github"/> </a> </p>
-<h2>🪪 License</h2> <p align="center"> This project is released under the <b>MIT License</b> — free for personal and academic use. 🧾 </p> ```
+<h2>🪪 License</h2> <p align="center"> This project is released under the <b>MIT License</b> — free for personal and academic use. 🧾 </p> 
